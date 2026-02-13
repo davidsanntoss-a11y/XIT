@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Central Privada</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main>
+
+    <!-- LOGIN -->
+    <section id="login-container" class="box">
+        <h1>LOGIN</h1>
+        <p>Digite a senha para acessar</p>
+        <div class="input-group">
+            <input type="password" id="campo-senha" placeholder="Senha">
+            <button id="btn-login">Entrar</button>
+        </div>
+        <p id="erro" class="erro">Senha incorreta</p>
+    </section>
+
+<!-- PAINEL -->
+<section id="painel-ferramentas" class="container" style="display:none;">
+    <header class="topo">
+        <h1>PAINEL DE ITENS</h1>
+    </header>
+    <div class="grid">
+        <div class="card">
+            <div class="card-img">
+                <img src="img/item1.png" alt="Item 01">
+            </div>
+            <h3>XIT</h3>
+            <p>Full HeadShot.</p>
+            <a href="/home/santss/Downloads/PAINEL HEADTRICK FURY.apk" download class="btn-download">Download</a>
+        </div>
+
+        <div class="card">
+            <div class="card-img">
+                <img src="img/item2.png" alt="Item 02">
+            </div>
+            <h3>AUXILIO</h3>
+            <p>Ajuda na mira.</p>
+            <a href="downloads/ferramenta2.zip" download class="btn-download">Download</a>
+        </div>
+    </div>
+</section>
+
+
+<script>
+const senhaCorreta = "1234"; // altera pra sua senha
+const btnLogin = document.getElementById("btn-login");
+const campoSenha = document.getElementById("campo-senha");
+const erro = document.getElementById("erro");
+const loginContainer = document.getElementById("login-container");
+const painel = document.getElementById("painel-ferramentas");
+
+btnLogin.addEventListener("click", () => {
+    if(campoSenha.value === senhaCorreta){
+        loginContainer.style.display = "none";
+        painel.style.display = "block";
+        erro.style.display = "none";
+    } else {
+        erro.style.display = "block";
+    }
+});
+</script>
+
+</body>
+</html>
